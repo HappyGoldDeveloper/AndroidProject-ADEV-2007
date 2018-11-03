@@ -4,17 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/register2"
     tools:context=".Register">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etEmailReg"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="115dp"
-        android:text="Email:" />
+        android:layout_marginStart="48dp"
+        android:fontFamily="cursive"
+        android:text="Email:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView3"
@@ -22,8 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="170dp"
-        android:text="Password:" />
+        android:layout_marginTop="133dp"
+        android:fontFamily="cursive"
+        android:text="Password:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/textView4"
@@ -31,16 +37,19 @@
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="228dp"
-        android:text="Password:" />
+        android:layout_marginTop="208dp"
+        android:fontFamily="cursive"
+        android:text="Password:"
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/etEmailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="58dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/etPasswordReg"
+        android:layout_marginTop="55dp"
         android:ems="10"
         android:hint="Enter your Email"
         android:inputType="textPersonName" />
@@ -49,9 +58,8 @@
         android:id="@+id/etPasswordReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/etEmailReg"
-        android:layout_marginTop="150dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignStart="@+id/etRePasswordReg"
         android:ems="10"
         android:hint="Enter your Password"
         android:inputType="textPassword" />
@@ -60,21 +68,20 @@
         android:id="@+id/etRePasswordReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/etEmailReg"
-        android:layout_marginTop="207dp"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="39dp"
         android:ems="10"
         android:hint="Re-enter Password"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="291dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="164dp"
-        android:layout_marginStart="133dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="174dp"
         android:text="Register" />
 
     <TextView
@@ -83,25 +90,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="107dp"
-        android:text="Already have an Account ? Login here" />
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:layout_marginBottom="136dp"
+        android:text="Already have an Account ? Login here"
+        android:textColor="@android:color/background_dark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/btnRegister"
+        android:layout_toEndOf="@+id/textView"
         android:visibility="invisible" />
 </RelativeLayout>
