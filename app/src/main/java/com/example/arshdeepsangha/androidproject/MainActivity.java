@@ -76,10 +76,20 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if (task.isSuccessful()) {
-                        Intent intent = new Intent(MainActivity.this, Home.class);
-                        startActivity(intent);
-                        finish();
-                    } else {
+
+                        if(firebaseAuth.getCurrentUser().isEmailVerified()) {
+
+
+                            Intent intent = new Intent(MainActivity.this, Home.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else{
+                            progressBar2.setVisibility(View.INVISIBLE);
+                            Toast.makeText(MainActivity.this, "Please verify your email!", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                    else {
                         progressBar2.setVisibility(View.INVISIBLE);
                         Toast.makeText(MainActivity.this, task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
