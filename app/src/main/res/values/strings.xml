@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AndroidProject</string>
+
+    <string-array name="residence">
+        <item>Condominium</item>
+        <item>Detached House</item>
+        <item>Townhouse</item>
+        <item>Duplex/Triplex</item>
+    </string-array>
+
 </resources>

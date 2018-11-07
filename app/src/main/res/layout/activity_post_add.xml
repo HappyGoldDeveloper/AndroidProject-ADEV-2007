@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostAdd">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView7"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="89dp"
+        android:text="Address:"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="77dp" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="Current Address"
+        android:inputType="textPersonName"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="59dp" />
+
+    <Spinner
+        android:id="@+id/spinnerResidence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/etAddress"
+        android:layout_marginTop="140dp"></Spinner>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etOcc"
+        android:layout_alignParentStart="true"
+        android:text="Current Occupants:" />
+
+    <EditText
+        android:id="@+id/etOcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/etAddress"
+        android:layout_marginTop="178dp"
+        android:ems="10"
+        android:hint="Occupants"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:text="Maximum Occupants:" />
+
+    <EditText
+        android:id="@+id/etMaxOcc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etAddress"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Max Occupants"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etRent"
+        android:layout_alignParentStart="true"
+        android:text="Current Rent:" />
+
+    <EditText
+        android:id="@+id/etRent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/etAddress"
+        android:layout_marginBottom="167dp"
+        android:ems="10"
+        android:hint="Rent"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/etPhone"
+        android:layout_alignParentStart="true"
+        android:text="Contact Number:" />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/etAddress"
+        android:layout_marginBottom="103dp"
+        android:ems="10"
+        android:hint="Contact Number"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/btnPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_toEndOf="@+id/textView8"
+        android:text="Post Ad" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/spinnerResidence"
+        android:text="Residence Type:" />
+</RelativeLayout>
