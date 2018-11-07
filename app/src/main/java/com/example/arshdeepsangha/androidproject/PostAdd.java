@@ -12,6 +12,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -34,6 +36,8 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
 
     private FirebaseAuth firebaseAuth;
 
+    private FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,9 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
         setContentView(R.layout.activity_post_add);
 
         etAddress = findViewById(R.id.etAddress);
+
+        db = FirebaseFirestore.getInstance();
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         user = firebaseAuth.getCurrentUser().getEmail();
@@ -88,6 +95,12 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
         {
             Toast.makeText(PostAdd.this,"Please enter a Valid Phone Number",Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void saveAdd()
+    {
+        CollectionReference dbAd = db.collection("ad");
+
     }
 
     @Override
