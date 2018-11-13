@@ -77,7 +77,7 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
             public void onClick(View v) {
 
                 getValues();
-                saveAdToDatabase();
+
             }
         });
 
@@ -112,10 +112,13 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
         {
             Toast.makeText(PostAdd.this,"Please fill in all fields to Post Ad",Toast.LENGTH_LONG).show();
         }
-
-        if(phone.length() > 10)
+        else if(phone.length() > 10)
         {
             Toast.makeText(PostAdd.this,"Please enter a Valid Phone Number",Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            saveAdToDatabase();
         }
     }
 
