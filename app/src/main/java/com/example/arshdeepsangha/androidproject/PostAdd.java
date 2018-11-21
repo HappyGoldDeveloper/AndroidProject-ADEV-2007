@@ -1,5 +1,7 @@
 package com.example.arshdeepsangha.androidproject;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +38,10 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
     private String rent;
     private String phone;
     private String user;
+
+    public static final String ID = "id";
+    public static final String SHARED_PREFS = "sharedPrefs";
+    private int id;
 
     private Button btnPost;
 
@@ -77,6 +83,8 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
             public void onClick(View v) {
 
                 getValues();
+                Intent intent = new Intent(PostAdd.this,Home.class);
+                startActivity(intent);
 
             }
         });
@@ -98,6 +106,20 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
         etMaxOcc.setText("");
         etRent.setText("");
         etPhone.setText("");
+    }
+
+    private void loadPref()
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        id = sharedPreferences.getInt(ID,0);
+    }
+
+    private void savePref(int number)
+    {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(ID,number);
+        editor.apply();
     }
 
     private void getValues()
@@ -127,9 +149,13 @@ public class PostAdd extends AppCompatActivity implements AdapterView.OnItemSele
         progressBar3.setVisibility(View.VISIBLE);
         progressBar3.isShown();
 
-        CollectionReference dbAd = db.collection("ad");
+        CollectionReference dbAd = db.collection("ads");
 
-        Ad ad = new Ad(address,residence, Integer.parseInt(occ),Integer.parseInt(maxOcc),Double.parseDouble(rent),phone,user);
+        loadPref();
+        id += 1;
+        savePref(id);
+
+        Ad ad = new Ad(id,address,residence, Integer.parseInt(occ),Integer.parseInt(maxOcc),Double.parseDouble(rent),phone,user);
 
         dbAd.add(ad).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
